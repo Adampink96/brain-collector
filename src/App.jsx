@@ -1,5 +1,5 @@
+// import Audio from "./components/audio";
 import Background from "./components/background";
-
 import Show from "./components/instructions";
 import Up from "./components/up";
 
@@ -7,6 +7,8 @@ export default function App() {
   return (
     <div>
       <h1>Brain Collector</h1>
+
+      {/* <Audio /> */}
 
       <Background />
 

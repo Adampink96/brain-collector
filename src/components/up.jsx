@@ -58,13 +58,36 @@ export default function Up() {
     const interval = setInterval(() => {
       setCount((currentCount) => currentCount + bps);
     }, 1000);
+    localStorage.setItem("bps", bps);
     return () => {
       clearInterval(interval);
     };
   }, [bps]);
 
   return (
+    // <div className="container">
     <div>
+      <button
+        className="container"
+        onClick={function () {
+          console.log("you clicked");
+          setCount(count + 1);
+          localStorage.setItem("brains", count);
+        }}
+      >
+        brains
+      </button>
+      <button
+        className="container"
+        onClick={function () {
+          console.log("reset");
+        }}
+      >
+        reset
+      </button>
+      <p className="para">brains:{count}</p>
+      <p className="para">bps:{bps}</p>
+
       <h2>upgrades</h2>
       <ul>
         {upgrades.map((upgrade, index) => (
@@ -77,27 +100,6 @@ export default function Up() {
           </button>
         ))}
       </ul>
-
-      <div className="container">
-        <button
-          onClick={function () {
-            console.log("you clicked");
-            setCount(count + 1);
-            localStorage.setItem("brains", count);
-          }}
-        >
-          brains
-        </button>
-        <button
-          onClick={function () {
-            console.log("reset");
-          }}
-        >
-          reset
-        </button>
-        <p className="para">brains:{count}</p>
-        <p className="para">bps:{bps}</p>
-      </div>
     </div>
   );
 }

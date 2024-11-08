@@ -44,6 +44,23 @@ h2 {
   animation: fadeIn 2s ease-out, shake 0.5s infinite alternate;
 }
 
+img {
+  width: 200px;
+  height: 200px;
+  align-items: center;
+  cursor: pointer;
+  border: 3px solid black;
+}
+
+img:focus {
+  border: 10px solid red;
+}
+
+img:hover {
+  background-color: #555555;
+  box-shadow: 0 0 10px rgba(195, 4, 4, 0.3);
+}
+
 p.para {
   font-size: 1.5em;
   margin: 10px;

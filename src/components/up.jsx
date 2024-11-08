@@ -72,7 +72,17 @@ export default function Up() {
   return (
     // <div className="container">
     <div>
-      <button
+      <img
+        onClick={function () {
+          console.log("you clicked");
+          setCount(count + 1);
+          biteAudio.play();
+          localStorage.setItem("brains", count);
+        }}
+        src="./zombie1.jpg"
+        alt="zombie"
+      />
+      {/* <button
         className="container"
         onClick={function () {
           console.log("you clicked");
@@ -82,7 +92,7 @@ export default function Up() {
         }}
       >
         brains
-      </button>
+      </button> */}
       <button
         className="container"
         onClick={function () {
@@ -103,9 +113,9 @@ export default function Up() {
         {upgrades.map((upgrade, index) => (
           <button onClick={() => buyUpgrades(upgrade)} key={index}>
             {upgrade.cost}
-
+            &nbsp;
             {upgrade.increase}
-
+            &nbsp;
             {names[index].name}
           </button>
         ))}

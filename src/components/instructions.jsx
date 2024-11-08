@@ -14,9 +14,9 @@ export default function Show() {
         <p>
           Welcome to Brain Collector, collect as many brains as possible hitting
           the brains button. the more brains you collect the more upgrades you
-          can purchase. the upgrade buttons numbers corespond to the list. the
-          cost and affect to the bps is shown next to each upgrade. enjoy and
-          collect them brains.
+          can purchase. the upgrade button displays both the cost to brains
+          first and the increase to the bps. now go harvest those brains .....
+          youve got abit of red on you.
         </p>
       )}
     </div>

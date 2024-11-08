@@ -9,8 +9,11 @@ export default function Up() {
       );
       const data = await response.json();
       setUpgrades(data);
+      console.log("data");
     }
     fetchData();
+    console.log("yay");
+    console.log(fetchData);
   }, []);
 
   const names = [
@@ -98,7 +101,7 @@ export default function Up() {
       <h2>upgrades</h2>
       <ul>
         {upgrades.map((upgrade, index) => (
-          <button onClick={() => buyUpgrades(upgrade)} key={index}>
+          <button onClick={() => buyUpgrades(upgrade)} key={upgrade}>
             {upgrade.cost}
 
             {upgrade.increase}

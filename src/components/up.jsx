@@ -53,7 +53,7 @@ export default function Up() {
   const [count, setCount] = useState(
     parseInt(localStorage.getItem("brains")) || 0
   );
-  const [bps, setBps] = useState(parseInt(localStorage.getItem("bps")) || 0);
+  const [bps, setBps] = useState(parseInt(localStorage.getItem("bps")) || 1);
   useEffect(() => {
     const interval = setInterval(() => {
       setCount((currentCount) => currentCount + bps);
@@ -64,6 +64,8 @@ export default function Up() {
     };
   }, [bps]);
 
+  let biteAudio = new Audio("./brainbite.mp3");
+  let resetAudio = new Audio("./reset.mp3");
   return (
     // <div className="container">
     <div>
@@ -72,6 +74,7 @@ export default function Up() {
         onClick={function () {
           console.log("you clicked");
           setCount(count + 1);
+          biteAudio.play();
           localStorage.setItem("brains", count);
         }}
       >
@@ -81,6 +84,10 @@ export default function Up() {
         className="container"
         onClick={function () {
           console.log("reset");
+          resetAudio.play();
+          setCount(0);
+          setBps(1);
+          localStorage.clear("brains");
         }}
       >
         reset

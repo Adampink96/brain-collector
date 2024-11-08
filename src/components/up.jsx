@@ -5,11 +5,11 @@ export default function Up() {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        "https:cookie-upgrade-api.vercel.app/api/upgrades"
+        "https://cookie-upgrade-api.vercel.app/api/upgrades"
       );
       const data = await response.json();
       setUpgrades(data);
-      console.log("data");
+      console.log(data);
     }
     fetchData();
     console.log("yay");
@@ -101,7 +101,7 @@ export default function Up() {
       <h2>upgrades</h2>
       <ul>
         {upgrades.map((upgrade, index) => (
-          <button onClick={() => buyUpgrades(upgrade)} key={upgrade}>
+          <button onClick={() => buyUpgrades(upgrade)} key={index}>
             {upgrade.cost}
 
             {upgrade.increase}

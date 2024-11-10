@@ -72,7 +72,7 @@ export default function Up() {
   return (
     // <div className="container">
     <div>
-      <img
+      {/* <img
         onClick={function () {
           console.log("you clicked");
           setCount(count + 1);
@@ -81,8 +81,8 @@ export default function Up() {
         }}
         src="./zombie1.jpg"
         alt="zombie"
-      />
-      {/* <button
+      /> */}
+      <button
         className="container"
         onClick={function () {
           console.log("you clicked");
@@ -92,7 +92,7 @@ export default function Up() {
         }}
       >
         brains
-      </button> */}
+      </button>
       <button
         className="container"
         onClick={function () {
